@@ -45,7 +45,7 @@ $VisaApplieCount = mysqli_num_rows($VisaAppliequery);
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="keywords" content="">
-    <title>Maisha Infotech - Admin</title>
+    <title>Seven Seas - Admin</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>

@@ -73,3 +73,39 @@ $(document).on("click", ".CoyntDltBtn", function () {
 
 
 });
+
+$(document).on("submit", "#AddblogForms", function () {
+    $.ajax({
+      type: "POST",
+      url: "ajax/visa.php",
+      processData: false,
+      contentType: false,
+      data: new FormData(this),
+      beforeSend: function () {
+        $("#docUploadBtn").attr("disabled", "disabled");
+        $("#docUploadBtn").html(
+          "<i class='fa fa-spinner fa-spin' aria-hidden='true'></i>"
+        );
+      },
+  
+      success: function (data) {
+        data = JSON.parse(data);
+        if (data.status) {
+          swicon = "success";
+          msg = data.message;
+          srbSweetAlret(msg, swicon);
+          window.setTimeout(function () {
+            location.reload();
+        }, 100);
+        } else {
+          swicon = "warning";
+          msg = data.message;
+          srbSweetAlret(msg, swicon);
+        }
+      },
+      complete: function () {
+        $("#docUploadBtn").removeAttr("disabled", "disabled");
+        $("#docUploadBtn").html('Upload Document');
+      },
+    });
+  });

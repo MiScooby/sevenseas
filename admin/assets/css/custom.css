@@ -235,6 +235,15 @@ select.form-select.form-select-sm {
 text-transform: uppercase;
 color: #973021;
 }
+.tags b{
+    font-size: 11px;
+    color: #938e8e;
+}
+.tags span{
+    font-size: 14px;
+    color: #000;
+    line-height: 30px;
+}
 .tags {
     padding: 3px 9px;
     margin: 0 5px;
@@ -243,6 +252,7 @@ color: #973021;
     background: #f5f5f5;
     font-size: 12px;
     font-weight: 600;
+    width: 100%;
 }
 
 .jobttp {

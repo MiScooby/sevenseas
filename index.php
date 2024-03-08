@@ -21,7 +21,7 @@
                     <div class="col-lg-6">
                         <div class="content-box">
                             <div class="number animate-2">#1</div>
-                            <h1 class="title animate-1">Vcuiehdciu & <br> Medical for employment Visas</h1>
+                            <h1 class="title animate-1">Visa Consultacny & <br> Medical for employment Visas</h1>
                             <p>Experience seamless global travel with our premier visa services. We simplify the visa process, ensuring a smooth journey for you. Rely on our visa expertise, enhance your travel experiences, expand your global connections, and embark on unforgettable adventures with Seven Seas as your companion.</p>
                             <div class="btn-box animate-3">
                                 <a href="javascript:;" class="theme-btn btn-style-one"><span class="btn-title">Explore now</span></a>

@@ -57,7 +57,7 @@
                                             </g>
                                         </svg>
                                     </a></td> 
-                                <td><a href="applied-visa-details.php" class="btn btn-primary">View Details</a></td>
+                                <td><a href="applied-visa-details.php?<?= $VisaAppliequery['service_id'] ?>" class="btn btn-primary">View Details</a></td>
                                 
                             </tr>
                         <?php

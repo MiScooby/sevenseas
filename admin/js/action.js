@@ -69,6 +69,7 @@ $(document).on("submit", "#remarkForm", function () {
   });
 });
 
+
 $(document).on("submit", "#galleryForms", function () {
   $.ajax({
     type: "POST",
@@ -100,6 +101,7 @@ $(document).on("submit", "#galleryForms", function () {
     },
   });
 });
+
 $(document).on("click", ".glrDltBtn", function () {
   var glId = $(this).attr("data-id");
 
@@ -139,3 +141,4 @@ $(document).on("click", ".glrDltBtn", function () {
     }
   });
 });
+
