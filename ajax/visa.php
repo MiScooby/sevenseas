@@ -1,7 +1,7 @@
 <?php include('../connection/config.php');
 require_once '../emailer/mail.class.php';
 
-if (isset($_POST['formType']) && $_POST['formType'] == "visaApplyForm") {
+if (isset($_POST['formType']) && $_POST['formType'] == "DocUploadType") {
     $form_name  =  mysqli_real_escape_string($con, $_POST['form_name']);
     $form_email  =  mysqli_real_escape_string($con, $_POST['form_email']);
     $form_phone  =  mysqli_real_escape_string($con, $_POST['form_phone']);
