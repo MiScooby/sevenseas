@@ -8,12 +8,12 @@
 			<h1 class="title">Contact Us</h1>
 			<ul class="page-breadcrumb">
 				<li><a href="index.php">Home</a></li>
-				<li>Contact</li>
+				<li>Contact us</li>
 			</ul>
 		</div>
 	</div>
 </section>
-<!-- test -->
+
 <section class="contact-anshu">
 	<div class="container">
 		<div class="row mb-5" data-cues="slideInUp" data-disabled="true">
