@@ -8,7 +8,7 @@
 			<h1 class="title">Contact Us</h1>
 			<ul class="page-breadcrumb">
 				<li><a href="index.php">Home</a></li>
-				<li>Contact us</li>
+				<li>Contact by vs code</li>
 			</ul>
 		</div>
 	</div>
