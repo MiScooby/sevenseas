@@ -1,0 +1,144 @@
+
+.pro_list_div_tbl span.badge.alert-success {
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.blog-info-section .blog-title {
+    font-size: 26px;
+    font-weight: 500;
+    color: #916d44;
+}
+
+.blog-info-section .blog-title span.firstWord {
+    font-size: 50px;
+    font-weight: 600;
+    color: #df971c;
+    padding: 0 3px;
+}
+
+.blog-info-section .blog-top .d-flex {
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.blog-su ul {
+    padding: 5px 0 0px 0;
+}
+
+.blog-su ul li {
+    display: inline;
+    padding: 0 10px;
+}
+
+.blog-su ul li.blog-author {
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 600;
+    border-right: 1px solid #000;
+}
+
+.blog-su ul li.blog-author span {
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+.blog-su ul li.blog-time {
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+.blogview-image img {
+    height: 400px !important;
+    width: 100%;
+}
+
+.blog-tags .tags-box .tag-link {
+    padding: 8px 15px;
+    background-color: #F4F6F8;
+    border: 1px solid #F4F6F8;
+    color: #000;
+    font-size: 13px;
+    margin: 4px;
+    display: inline-block;
+}
+
+.blog-c {
+    font-size: 12px;
+}
+
+.blog-desc h1 {
+    font-size: 26px;
+}
+
+.blog-desc h2 {
+    font-size: 24px;
+}
+
+.blog-desc h3 {
+    font-size: 22px;
+}
+
+.blog-desc h4 {
+    font-size: 20px;
+}
+
+.blog-desc h5 {
+    font-size: 18px;
+}
+
+.blog-desc h6 {
+    font-size: 16px;
+}
+
+.popup img {
+    width: 150px;
+    height: 150px;
+    cursor: pointer
+}
+
+.showimg {
+    z-index: 999;
+    display: none;
+}
+
+.showimg .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .66);
+    top: 0;
+    left: 0;
+    display: block !important;
+}
+
+.showimg .img-show {
+    width: 450px;
+    height: 420px;
+    background: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.img-show span {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 99;
+    cursor: pointer;
+    color: #ff0000;
+    font-weight: 700;
+}
+
+.img-show img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
