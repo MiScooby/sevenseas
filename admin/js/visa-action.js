@@ -145,3 +145,47 @@ $(document).on("submit", "#AddPayment", function () {
         },
     });
 });
+
+
+
+$(document).on("click", ".DocDltBtn", function () {
+    var docId = $(this).attr("data-id");
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "ajax/visa.php",
+                type: "POST",
+                async: false,
+                data: {
+                    docId: docId,
+                    formType: "DltDocs",
+                },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    if (data.status) {
+                        swicon = "success";
+                        msg = data.message;
+                        srbSweetAlret(msg, swicon);
+                        window.setTimeout(function () {
+                            location.reload();
+                        }, 100);
+                    } else {
+                        swicon = "warning";
+                        msg = data.message;
+                        srbSweetAlret(msg, swicon);
+                    }
+                },
+            });
+        }
+    });
+
+
+});

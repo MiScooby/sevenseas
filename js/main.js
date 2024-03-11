@@ -162,3 +162,35 @@ $(document).on("submit", "#visaApplyForm", function () {
         },
     });
 });
+$(document).on("submit", "#payment_check_form", function () {
+    $.ajax({
+        type: "POST",
+        url: "ajax/visa.php",
+        processData: false,
+        contentType: false,
+        data: new FormData(this),
+        beforeSend: function () {
+            $("#payButton").attr("disabled", "disabled");
+            $("#payButton").html(
+                "<b> Please Wait </b> <i class='fa fa-spinner fa-spin' aria-hidden='true'></i>"
+            );
+        },
+        success: function (data) {
+            data = JSON.parse(data);
+            if (data.status) {
+                swicon = "success";
+                msg = data.message;
+                srbSweetAlret(msg, swicon);
+                window.location.href = data.url;
+            } else {
+                swicon = "warning";
+                msg = data.message;
+                srbSweetAlret(msg, swicon);
+            }
+        },
+        complete: function () {
+            $("#payButton").removeAttr("disabled", "disabled");
+            $("#payButton").html("<span class='btn-title text-white'>Proceed To Pay </span>");
+        },
+    });
+});

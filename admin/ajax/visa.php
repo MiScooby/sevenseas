@@ -1,5 +1,6 @@
 <?php
 include('../../connection/config.php');
+require_once '../../emailer/mail.class.php';
 
 if (isset($_POST['formType']) && $_POST['formType'] == "DocUploadType") {
     $reqId = $_POST['reqId'];
@@ -14,11 +15,16 @@ if (isset($_POST['formType']) && $_POST['formType'] == "DocUploadType") {
     $insertCatQuery = mysqli_query($con, "INSERT INTO `documents`(`req_id`, `doc_file`, `doc_name`) VALUES ('$reqId','$FileExtName','$docName')");
 
     if ($insertCatQuery) {
-
         move_uploaded_file($docImage['tmp_name'], "../../visa_document/" . $FileExtName);
-
         $data['status'] = true;
         $data['message'] = 'Document Inserted Successfully..';
+        $apDetail = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM `applied_visa` WHERE `service_id`='$reqId' "));
+        $apEmail = $apDetail['email'];
+        include '../../emailer_html/visa/document.php';
+        $client_title = "Visa Request Notification - Seven Seas";
+        $client_subject = "Visa Request Notification - Seven Seas";
+        $client = new HttpMail($apEmail);
+        $client->send($client_title, $client_subject, $clientmessage);
     } else {
         $data['status'] = false;
         $data['message'] = 'Error Occur in Document..';
@@ -38,6 +44,13 @@ if (isset($_POST['formType']) && $_POST['formType'] == "AddPayment") {
         if ($insertCatQuery) {
             $data['status'] = true;
             $data['message'] = 'Payment Added Successfully..';
+            $apDetail = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM `applied_visa` WHERE `service_id`='$reqId' "));
+            $apEmail = $apDetail['email'];
+            include '../../emailer_html/visa/payment.php';
+            $client_title = "Visa Payment Notification - Seven Seas";
+            $client_subject = "Visa Payment Notification - Seven Seas";
+            $client = new HttpMail($apEmail);
+            $client->send($client_title, $client_subject, $clientmessage);
         } else {
             $data['status'] = false;
             $data['message'] = 'Error Occur in Payment..';
@@ -55,5 +68,19 @@ if (isset($_POST['formType']) && $_POST['formType'] == "AddPayment") {
     }
 }
 
+
+if (isset($_POST['formType']) && $_POST['formType'] == "DltDocs") {
+    $docId  = $_POST['docId'];
+
+    $DeleteCatQ = mysqli_query($con, "UPDATE `documents` SET `trash`='1' WHERE `id`='$docId' ");
+
+    if ($DeleteCatQ) {
+        $data['status'] = true;
+        $data['message'] = 'Document Delete Successfully..';
+    } else {
+        $data['status'] = false;
+        $data['message'] = 'Error Occur in Document Delete..';
+    }
+}
 
 echo json_encode($data);

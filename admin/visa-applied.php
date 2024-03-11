@@ -22,14 +22,14 @@
                     <tbody class="">
                         <?php
                         $i = 1;
-                        while ($VisaAppliequery = mysqli_fetch_array($VisaAppliequery)) {
+                        while ($VisaAppliequeryd = mysqli_fetch_array($VisaAppliequery)) {
                         ?>
                             <tr>
                                 <td><?= $i++ ?></td>
-                                <td><?= $VisaAppliequery['name'] ?></td>
-                                <td><?= $VisaAppliequery['mobile'] ?></td>
-                                <td><?= $VisaAppliequery['email'] ?></td>
-                                <td><a href="../passport_data/<?= $VisaAppliequery['passport'] ?>" target="_blank">
+                                <td><?= $VisaAppliequeryd['name'] ?></td>
+                                <td><?= $VisaAppliequeryd['mobile'] ?></td>
+                                <td><?= $VisaAppliequeryd['email'] ?></td>
+                                <td><a href="../passport_data/<?= $VisaAppliequeryd['passport'] ?>" target="_blank">
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.001 512.001" xml:space="preserve" width="35px" height="35px" fill="#000000">
                                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -57,7 +57,7 @@
                                             </g>
                                         </svg>
                                     </a></td> 
-                                <td><a href="applied-visa-details.php?<?= $VisaAppliequery['service_id'] ?>" class="btn btn-primary">View Details</a></td>
+                                <td><a href="applied-visa-details.php?<?= $VisaAppliequeryd['service_id'] ?>" class="btn btn-primary">View Details</a></td>
                                 
                             </tr>
                         <?php

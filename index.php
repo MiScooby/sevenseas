@@ -13,9 +13,9 @@
     <div class="banner-carousel owl-carousel owl-theme">
 
         <div class="slide-item">
-            <div class="bg-image youtube-container">
+            <!-- <div class="bg-image youtube-container">
                 <iframe src="https://www.youtube.com/embed/cf8TFVPuT9o?autoplay=1&amp;mute=1&amp;loop=1&amp;color=white&amp;controls=0&amp;modestbranding=1&amp;playsinline=1&amp;rel=0&amp;enablejsapi=1&amp;playlist=cf8TFVPuT9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-            </div>
+            </div> -->
             <div class="auto-container">
                 <div class="row">
                     <div class="col-lg-6">

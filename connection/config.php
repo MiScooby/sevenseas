@@ -13,7 +13,7 @@ $username = "root";
 $password = "";
 $server = "localhost";
 $db = "seven_seas";
-$base_url = "http://localhost/visa_uddan/";
+$base_url = "http://localhost/sevenseas1/";
 
 $con = mysqli_connect($server, $username, $password, $db);
 

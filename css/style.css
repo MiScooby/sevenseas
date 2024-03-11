@@ -12927,11 +12927,17 @@ margin-bottom: 11px;
   color: #015cb5;
   font-weight: 600;
 }
-.payment-copyright {
-  position: absolute;
-  bottom: 0;
+.payment-copyright { 
   border-top: 1px solid #ddd1d1;
   padding-top: 10px;
+  background: #fff;
+  z-index: 9;
+}
+
+.srb-pra{
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
 }
 
 .course-sidebar.hny img {
@@ -12945,8 +12951,12 @@ margin-bottom: 11px;
 }
 .offcanvas-header {
   border-bottom: 1px solid #f1f1f1;
-  padding: 10px;
-      margin-bottom: 2rem;
+  padding: 20px;
+      margin-bottom: 0.5rem;
+}
+.offcanvas-header h2{
+  font-size: 22px;
+  text-transform: uppercase;
 }
 .website-logo .logo img.logo-size-short {
   opacity:0 !important;

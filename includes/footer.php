@@ -507,7 +507,7 @@
             <div class="col-sm-12">
               <div class="mb-1">
                 <label for="">Email *</label>
-                <input name="form_email" value="<?=(isUserLoggedIn())?''.$GetLoginUser['email'].'':'';?>" required class="form-control required email" type="email" placeholder="Enter Email">
+                <input name="form_email" readonly value="<?=(isUserLoggedIn())?''.$GetLoginUser['email'].'':'';?>" required class="form-control required email" type="email" placeholder="Enter Email">
               </div>
             </div>
 
@@ -684,6 +684,9 @@
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
   }
+
+
+  
 </script>
 </body>
 

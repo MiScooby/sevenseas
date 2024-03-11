@@ -1,5 +1,5 @@
 <?php include('./connection/config.php');
-if(isUserLoggedIn()){
+if (isUserLoggedIn()) {
     $loginI = $_SESSION['user_id'];
     $GetLoginUser = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM `user` WHERE `email`='$loginI'"));
 }
@@ -90,7 +90,7 @@ if(isUserLoggedIn()){
                                 <strong class="text">+ 91-9999130118</strong>
                             </a>
 
-                            <a href="<?=(isUserLoggedIn())?'account.php':'login.php';?>" class="theme-btn btn-style-one"><span class="btn-title"><span class="fa fa-user"></span> <?=(isUserLoggedIn())?''.$GetLoginUser['name'].'':'User Login';?> </span></a>
+                            <a href="<?= (isUserLoggedIn()) ? 'account.php' : 'login.php'; ?>" class="theme-btn btn-style-one"><span class="btn-title"><span class="fa fa-user"></span> <?= (isUserLoggedIn()) ? '' . $GetLoginUser['name'] . '' : 'User Login'; ?> </span></a>
                             <button class="theme-btn btn-style-one" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Pay Online</button>
 
 
@@ -188,41 +188,49 @@ if(isUserLoggedIn()){
 
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
-                    <h5 id="offcanvasRightLabel" class="m-0">
-                        <div class="sec-title m-0">
-                            <h2 class="m-0">Pay Online</h2>
-                        </div>
-                    </h5>
+
+
+                    <div class="sec-title m-0">
+                        <h2 class="m-0">Pay Online</h2>
+                    </div>
+
+
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
 
                 <div class="offcanvas-body">
-                    <form id="contact_form" name="contact_form" method="post">
+                    <form id="payment_check_form" action="javascript:;" method="post">
+                        <div class="row">
+                            <p class="srb-pra">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, enim a. Laborum molestiae nihil voluptatibus ab atque eius! Illum facere beatae eius, provident obcaecati voluptatum reiciendis amet</p>
+                        </div>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="mb-3">
-                                    <input name="form_name" class="form-control" type="number" placeholder="Registration ID">
+                                    <label>Request Id *</label>
+                                    <input name="reqId" class="form-control" type="text" placeholder="Registration ID">
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="mb-3">
-                                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                                    <label>Register Email Id *</label>
+                                    <input name="reqEmail" class="form-control required email" type="email" placeholder="Enter Email">
                                 </div>
                             </div>
                         </div>
-                        
-                      
+
+
                         <div class="mb-3">
-                            <input name="form_botcheck" class="form-control" type="hidden" value />
-                            <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title"><a href="checkout.php">Proceed To Pay</a></span></button>
+                            <input name="formType" value="payment_check_form" type="hidden" />
+                            <button type="submit" id="payButton" class="theme-btn btn-style-one text-white"><span class="btn-title text-white">Proceed To Pay </span></button>
 
                         </div>
                     </form>
-                    
-                    <div class="payment-copyright">
-                        <p>© 2024 Payment.All Rights reserved. <a href="javascript:;">Privacy Policy</a></p>
-                    </div>
 
+
+
+                </div>
+                <div class="payment-copyright text-center">
+                    <p>© 2024 Payment.All Rights reserved. <a href="javascript:;">Privacy Policy</a></p>
                 </div>
             </div>
         </header>

@@ -108,8 +108,8 @@ if (isset($_POST['formType']) && $_POST['formType'] == "applicantSts") {
     $updateJob = mysqli_query($con, "UPDATE `job_applicants` SET  `status`='$sts' WHERE `id`='$id' ");
     if ($updateJob) {
         include '../../emailer_html/job-user/status.php';
-        $client_title = " M-Core Cables & Wires ";
-        $client_subject = "Job Application Status | M-Core Wires & Cabels";
+        $client_title = " Seven Seas ";
+        $client_subject = "Job Application Status | Seven Seas";
         $client = new HttpMail($apEmail);
         $client->send($client_title, $client_subject, $clientmessage);
         $data['status'] = true;

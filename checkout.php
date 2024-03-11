@@ -1,4 +1,7 @@
-<?php include('includes/header.php') ?>
+<?php include('includes/header.php');
+
+
+?>
 
 <section class="page-title" style="background-image: url(images/background/page-title.jpg);">
     <div class="auto-container">
