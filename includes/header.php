@@ -201,7 +201,7 @@ if (isUserLoggedIn()) {
                 <div class="offcanvas-body">
                     <form id="payment_check_form" action="javascript:;" method="post">
                         <div class="row">
-                            <p class="srb-pra">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, enim a. Laborum molestiae nihil voluptatibus ab atque eius! Illum facere beatae eius, provident obcaecati voluptatum reiciendis amet</p>
+                            <p class="srb-pra">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, enim a. Laborum molestiae nihixsl voluptatibus ab atque eius! Illum facere beatae eius, provident obcaecati voluptatum reiciendis amet</p>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
