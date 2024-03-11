@@ -150,56 +150,30 @@
         <div class="row">
             <div class="col-lg-12">
 
-               
+
                 <div class="carousel-outer">
 
                     <div class="countries-carousel owl-carousel owl-theme">
+                        <?php
+                        $counrtQ = mysqli_query($con, "SELECT vc.*, c.country_name FROM visa_county vc, countries c WHERE c.country_code=vc.country_code");
 
-                        <div class="country-block">
-                            <div class="inner-box">
-                                <div class="flag"><img src="images/resource/flag-1.png" alt=""></div>
-                                <a href="javascript:;" class="theme-btn">Australia</a>
-                            </div>
-                        </div>
+                        while ($counrtData = mysqli_fetch_array($counrtQ)) {
+                        ?>
+                            <div class="country-block" data-country="<?= $counrtData['country_code'] ?>" onclick="handleCountryClick(this, '<?php echo (isUserLoggedIn()) ? 'apply' : 'login'; ?>')" style="cursor: pointer;">
+                                <div class="inner-box">
+                                <div class="flag"><img src="media/country_ico/<?= $counrtData['ico'] ?>" alt=""></div>
+                                    <h6 class="theme-btn"><?= strtoupper($counrtData['country_name']) ?></h6>
 
-                        <div class="country-block">
-                            <div class="inner-box">
-                                <div class="flag"><img src="images/resource/flag-2.png" alt=""></div>
-                                <a href="javascript:;" class="theme-btn">Germany</a>
+                                     
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="country-block">
-                            <div class="inner-box">
-                                <div class="flag"><img src="images/resource/flag-3.png" alt=""></div>
-                                <a href="javascript:;" class="theme-btn">Brazil</a>
-                            </div>
-                        </div>
-
-                        <div class="country-block">
-                            <div class="inner-box">
-                                <div class="flag"><img src="images/resource/flag-4.png" alt=""></div>
-                                <a href="javascript:;" class="theme-btn">Russia</a>
-                            </div>
-                        </div>
-
-                        <div class="country-block">
-                            <div class="inner-box">
-                                <div class="flag"><img src="images/resource/flag-5.png" alt=""></div>
-                                <a href="javascript:;" class="theme-btn">England</a>
-                            </div>
-                        </div>
-
-                        <div class="country-block">
-                            <div class="inner-box">
-                                <div class="flag"><img src="images/resource/flag-6.png" alt=""></div>
-                                <a href="javascript:;" class="theme-btn">India</a>
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-      
+
         </div>
 
     </div>
@@ -554,4 +528,4 @@
 </section>
 
 
-<?php include('includes/footer.php')?>
+<?php include('includes/footer.php') ?>
