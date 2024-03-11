@@ -1,32 +1,57 @@
 <?php
 include('../../connection/config.php');
 
-if (isset($_POST['formType']) && $_POST['formType'] == "addblogCattype") {
-    $catName  =  mysqli_real_escape_string($con, $_POST['Categoryname']);
-    $catThumb  = $_FILES['CategoryImg'];
+if (isset($_POST['formType']) && $_POST['formType'] == "DocUploadType") {
+    $reqId = $_POST['reqId'];
+    $docName  =  mysqli_real_escape_string($con, $_POST['docName']);
+    $docImage  = $_FILES['docImage'];
 
-    $FileExt = explode('.', $catThumb['name'])[1];
-    $FileExtName = 'cat' . $nameKeyTok . '.' . $FileExt;
-    $FileExtName2 = 'cat' . $nameKeyTok . 'co.' . $FileExt;
+    $FileExt = explode('.', $docImage['name'])[1];
+    $FileExtName = 'doc' . $nameKeyTok . '.' . $FileExt;
 
 
-    $catCheckCount = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `blog_category` WHERE `cat_name`='$catName' "));
-    if ($catCheckCount == 0) {
-        $insertCatQuery = mysqli_query($con, "INSERT INTO `blog_category`( `cat_name`, `cat_thumb`) VALUES ( '$catName', '$FileExtName')");
 
-        if ($insertCatQuery) {
+    $insertCatQuery = mysqli_query($con, "INSERT INTO `documents`(`req_id`, `doc_file`, `doc_name`) VALUES ('$reqId','$FileExtName','$docName')");
 
-            move_uploaded_file($catThumb['tmp_name'], "../../media/blog/blog_cat/" . $FileExtName);
+    if ($insertCatQuery) {
 
-            $data['status'] = true;
-            $data['message'] = 'Blog Category Inserted Successfully..';
-        } else {
-            $data['status'] = false;
-            $data['message'] = 'Error Occur in Category..';
-        }
+        move_uploaded_file($docImage['tmp_name'], "../../visa_document/" . $FileExtName);
+
+        $data['status'] = true;
+        $data['message'] = 'Document Inserted Successfully..';
     } else {
         $data['status'] = false;
-        $data['message'] = 'Category Already Exist..';
+        $data['message'] = 'Error Occur in Document..';
+    }
+}
+
+if (isset($_POST['formType']) && $_POST['formType'] == "AddPayment") {
+    $reqId = $_POST['reqId'];
+    $PayAmount  =  mysqli_real_escape_string($con, $_POST['PayAmount']);
+
+    $checkAmoutnAx = mysqli_query($con, "SELECT * FROM `payment_req` WHERE `req_id`='$reqId' ");
+    $checkAmoutnCount = mysqli_num_rows($checkAmoutnAx);
+
+    if ($checkAmoutnCount > 0) {
+        $insertCatQuery = mysqli_query($con, "UPDATE `payment_req` SET  `amount`='$PayAmount' WHERE `req_id`='$reqId'");
+
+        if ($insertCatQuery) {
+            $data['status'] = true;
+            $data['message'] = 'Payment Added Successfully..';
+        } else {
+            $data['status'] = false;
+            $data['message'] = 'Error Occur in Payment..';
+        }
+    } else {
+        $insertCatQuery = mysqli_query($con, "INSERT INTO `payment_req`(`req_id`, `amount`) VALUES ('$reqId','$PayAmount')");
+
+        if ($insertCatQuery) {
+            $data['status'] = true;
+            $data['message'] = 'Payment Added Successfully..';
+        } else {
+            $data['status'] = false;
+            $data['message'] = 'Error Occur in Payment..';
+        }
     }
 }
 
