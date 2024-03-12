@@ -191,7 +191,7 @@ if (isUserLoggedIn()) {
 
 
                     <div class="sec-title m-0">
-                        <h2 class="m-0">Pay Online By Card</h2>
+                        <h2 class="m-0">Pay Online</h2>
                     </div>
 
 
