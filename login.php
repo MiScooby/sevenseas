@@ -1,6 +1,6 @@
 <?php include('includes/header.php');
 if(isUserLoggedIn()){
-    header('Location: index.php');
+    header('Location: account.php');
 }
 ?>
 <style>
