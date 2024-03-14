@@ -19,6 +19,17 @@ function srbSweetAlret(msg, swicon) {
     })
 }
 
+function logOut() {
+    $.ajax({
+      url: "ajax/logout.php",
+      type: "POST",
+      async: false,
+      success: function (data) {
+        location.href = "login.php";
+      },
+    });
+  }
+
 $(document).on("submit", "#registrationForm", function () {
     
     $.ajax({
